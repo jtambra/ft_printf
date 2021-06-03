@@ -1,6 +1,6 @@
 # ft_printf
 
-This Project consist of a recoding of the famous printf function in C language.
+###This Project consist of a recoding of the famous printf function in C language.
 ----
 
 ## How To Use
