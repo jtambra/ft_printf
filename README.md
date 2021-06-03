@@ -3,8 +3,6 @@
 This Project consist of a recoding of the famous printf function in C language.
 ----
 
-# ft_printf
-
 ## How To Use
 1. clone this repo.
 2. run the `make` command.
