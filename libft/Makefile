@@ -38,7 +38,7 @@ all: $(NAME)
 
 $(NAME): ./libft.h
 			echo LIBFT
-			$(CC) $(FLAG) -c $(SRC) -I $(HEADER)
+			$(CC) $(FLAG) -c $(SRC) -I. $(HEADER)
 			ar rc $(NAME) $(OBJ)
 			ranlib $(NAME)
 
