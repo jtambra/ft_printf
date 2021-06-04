@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../includes/ft_printf.h"
 
 int		ft_put_n(char *str, int i)
 {
@@ -26,15 +26,13 @@ int		ft_put_n(char *str, int i)
 	return (count);
 }
 
-size_t	ft_len_base(long long n, int base)
+size_t	ft_len_base(unsigned long long n, int base)
 {
 	size_t		i;
 
 	i = 0;
 	if (n == 0)
 		i++;
-	if (n < 0)
-		n = n * -1;
 	while (n > 0)
 	{
 		n = n / base;
@@ -45,8 +43,7 @@ size_t	ft_len_base(long long n, int base)
 
 int		ft_putchar(char c)
 {
-	write(1, &c, 1);
-	return (1);
+	return (write(1, &c, 1));
 }
 
 int		ft_strlen(const char *s)

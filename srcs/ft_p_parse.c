@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../includes/ft_printf.h"
 
 int		ft_toupper(int c)
 {
@@ -26,8 +26,6 @@ size_t	ft_len_ptr(unsigned long long n, int base)
 	i = 0;
 	if (n == 0)
 		i++;
-	if (n < 0)
-		n = n * -1;
 	while (n > 0)
 	{
 		n = n / base;
@@ -36,10 +34,10 @@ size_t	ft_len_ptr(unsigned long long n, int base)
 	return (i);
 }
 
-char	*ft_itoa_pointer(unsigned long long nb, int base)
+char	*ft_itoa_pointer(long long nb, int base)
 {
 	char				*str;
-	unsigned long long	len;
+	long long	len;
 
 	len = ft_len_ptr(nb, base) + 2;
 	if (!(str = (char *)malloc(sizeof(char) * (len + 1))))
