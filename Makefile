@@ -22,9 +22,9 @@ SRC = $(addprefix ./srcs/,\
 
 SRC_OBJECTS = $(patsubst %.c,%.o,$(SRC))
 
-HEADERS = /includes/ft_printf.h
+HEADERS = -I /includes/libft.h -I$(LIBFT)
 
-FLAGS = -Wall -Wextra -Werror -g $(HEADERS)
+FLAGS = -Wall -Wextra -Werror -g -O3 $(HEADERS)
 
 all: MKLIB $(NAME).a
 
@@ -34,9 +34,9 @@ $(NAME).a: $(LIBFT)/$(LIBFT).a $(SRC_OBJECTS)
 	cp $(LIBFT)/$(LIBFT).a ./$(NAME).a
 	ar rcs $(NAME).a $(SRC_OBJECTS)
 
-%.o: %.c $(HEADERS)
-	@gcc $(FLAGS) -c $< -o $@
-	@echo "$@ added"
+.c.o:
+	@gcc ${FLAGS} -c $< -o $@
+
 clean:
 	@/bin/rm -rf $(SRC_OBJECTS)
 	make -C $(LIBFT) clean
